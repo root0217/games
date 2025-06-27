@@ -1,24 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to right, #ffe6f0, #ffd6ec);
+  text-align: center;
+  color: #ff4081;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Василиса</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Василиса</h1>
-    <div class="slider">
-      <img class="slide active" src="img1.jpg" alt="Фото 1">
-      <img class="slide" src="img2.jpg" alt="Фото 2">
-      <img class="slide" src="img3.jpg" alt="Фото 3">
-    </div>
-    <audio autoplay loop>
-      <source src="music.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+.container {
+  padding: 0;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.slider {
+  position: relative;
+  width: 90vw;
+  max-width: 600px;
+  height: 80vh;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 64, 129, 0.4);
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.slide.active {
+  left: 0;
+  opacity: 1;
+}
